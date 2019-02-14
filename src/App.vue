@@ -126,7 +126,7 @@ export default {
           temp["soap:Envelope"][
             "soap:Body"
           ][0].GetExchangeRateResponse[0].GetExchangeRateResult[0].dsKurs[0].KursZbir;
-        for (let e of this.exchangeRates){
+        for (let e of this.exchangeRates) {
           e["Datum"] = moment(new Date(e["Datum"])).format("DD.MM.YYYY");
           delete e["RBr"];
           delete e["DrzavaAng"];
@@ -138,7 +138,7 @@ export default {
         this.isLoading = false;
       });
     }
-  },
+  }
 };
 </script>
 
@@ -163,6 +163,6 @@ body {
   padding-left: 50px;
 }
 #myMain {
-  margin: 25px 25px 0px 25px;
+  margin: 25px 20px 0px 20px;
 }
 </style>

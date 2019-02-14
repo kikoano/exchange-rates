@@ -147,6 +147,10 @@ export default {
   },
   methods: {
     showFromToDate(from, to) {
+      if (this.$route.query.mode == 2){
+        this.endOfMonth = false;
+        this.tabulator.clearFilter();
+      }
       this.tableData = this.exchangeRates.filter(e =>
         moment(e["Datum"], "DD.MM.YYYY").isBetween(
           moment(from).subtract(1, "day"),

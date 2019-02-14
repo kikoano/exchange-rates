@@ -23,7 +23,7 @@ export const itemMixin = {
             this.show = !this.show
         },
         isLinkActive(item) {
-            if ( this.$route ) {
+            if (this.$route) {
                 return item.href == this.$route.path
             } else {
                 return item.href == window.location.pathname
@@ -35,7 +35,7 @@ export const itemMixin = {
                     return true
                 }
                 if (item.child) {
-                    if ( this.isChildActive(item.child) ) {
+                    if (this.isChildActive(item.child)) {
                         return true
                     }
                 }
@@ -53,7 +53,7 @@ export const itemMixin = {
             }
 
             if (!mobileItem && this.item.child) {
-                if ( this.isCollapsed && this.firstItem ) {
+                if (this.isCollapsed && this.firstItem) {
                     event.preventDefault()
                     return
                 }
@@ -77,23 +77,23 @@ export const itemMixin = {
             this.childActive = this.item && this.item.child ? this.isChildActive(this.item.child) : false
         }
     },
-    inject:['showChild'],
+    inject: ['showChild'],
 }
 
 export const animationMixin = {
     methods: {
         expandEnter(el) {
-            el.style.height = el.scrollHeight+'px'
+            el.style.height = el.scrollHeight + 'px'
         },
         expandAfterEnter(el) {
             el.style.height = 'auto'
         },
         expandBeforeLeave(el) {
-            if(this.isCollapsed) {
+            if (this.isCollapsed) {
                 el.style.display = 'none'
                 return
             }
-            el.style.height = el.scrollHeight+'px'
+            el.style.height = el.scrollHeight + 'px'
         }
     }
 }

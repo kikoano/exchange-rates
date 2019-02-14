@@ -13,17 +13,17 @@ Vue.use(VueSidebarMenu)
 import ToggleButton from 'vue-js-toggle-button';
 Vue.use(ToggleButton)
 
+import TitleScreen from "./components/TitleScreen.vue"
 import Table from "./components/Table.vue"
 import Graph from "./components/Graph.vue"
 
 Vue.use(VueRouter)
-const Charts = { template: '<div>TESTESTESTESTESTESTESTESTESTEST</div>' }
 const router = new VueRouter({
   routes: [
     {
       path: '/',
       name: 'TitleScreen',
-      component: Charts,
+      component: TitleScreen,
     },
     {
       path: '/table',
@@ -42,12 +42,12 @@ const router = new VueRouter({
             {
               path: '',
               name: 'Kontiuniran',
-              query:{mode:"1"}
+              query: { mode: "1" }
             },
             {
               path: '',
               name: 'Presecno',
-              query:{mode:"2"}
+              query: { mode: "2" }
             }
           ]
         }
@@ -61,12 +61,12 @@ const router = new VueRouter({
         {
           path: '',
           name: 'SingleGraph',
-          query:{num:"1"}
+          query: { num: "1" }
         },
         {
           path: '',
           name: 'DoubleGraph',
-          query:{num:"2"}
+          query: { num: "2" }
         }
       ]
     }
