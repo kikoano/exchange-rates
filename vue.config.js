@@ -1,4 +1,4 @@
 // vue.config.js
 module.exports = {
-   baseUrl: "/exchange-rates/"
+   publicPath: "/exchange-rates/"
 } 
